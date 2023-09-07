@@ -283,20 +283,6 @@ setMethod(
     } else if (verbose) {
       message("No variable features found for ", name)
     }
-    # Write out meta.features
-    if (ncol(x = x@meta.features)) {
-      if (verbose) {
-        message("Adding feature-level metadata for ", name)
-      }
-      WriteH5Group(
-        x = x@meta.features,
-        name = 'meta.features',
-        hgroup = xgroup,
-        verbose = verbose
-      )
-    } else if (verbose) {
-      message("No feature-level metadata found for ", name)
-    }
     # Write out miscellaneous data
     WriteH5Group(
       x = Misc(object = x),
