@@ -266,7 +266,7 @@ as.h5Seurat.Seurat <- function(
     }
   }
   # Add metadata, cell names, and identity classes
-  WriteH5Group(x = x[[]], name = 'meta.data', hgroup = hfile, verbose = verbose)
+  WriteH5Group(x = x@meta.data, name = 'meta.data', hgroup = hfile, verbose = verbose)
   WriteH5Group(
     x = colnames(x = x),
     name = 'cell.names',
